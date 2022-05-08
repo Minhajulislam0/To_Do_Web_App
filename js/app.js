@@ -46,7 +46,11 @@ function deleteList(e){
     // delete list
     if (list.classList[0]==='delete-button'){
         const item = list.parentElement;
-        item.remove();
+        // animation
+        item.classList.add('animation');
+        item.addEventListener('transitionend', function(){
+            item.remove();
+        });
     }
 
     // checkmark
